@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de contraseña</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #password-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="password-form">
+    <h2>Introduce la contraseña:</h2>
+    <form id="password-form">
+        <input type="password" id="password" required>
+        <button type="submit">Ingresar</button>
+    </form>
+    <p id="message"></p>
+</div>
+
+<script>
+    document.getElementById("password-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita que se recargue la página al enviar el formulario
+        var password = document.getElementById("password").value;
+        if (password === "04122007") {
+            document.getElementById("message").innerText = "¡Te amo mi vida 🌹, eres lo más preciado de mi mundo!";
+            document.getElementById("message").style.display = "block";
+        } else {
+            document.getElementById("message").innerText = "Contraseña incorrecta. Por favor, intenta de nuevo.";
+            document.getElementById("message").style.display = "block";
+        }
+    });
+</script>
+
+</body>
+</html>
